@@ -6,6 +6,8 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Login from './pages/login';
 import Home from './pages/home';
 import AuthApp from './pages/auth-app';
+import Product from './pages/product';
+import Batch from './pages/batch';
 
 
 
@@ -14,6 +16,8 @@ const routes = (
 		<Route path="/login" element={<Login />} />
 		<Route path="/" element={<AuthApp />}>
 			<Route exact path="/" element={<Home />} />
+			<Route exact path="/product" element={<Product />} />
+			<Route exact path="/batch" element={<Batch />} />
 		</Route>
 	</Routes>
 );
