@@ -1,61 +1,51 @@
 import styled from 'styled-components';
 
 const ProductWrapper = styled.div`
-width : 100%;
-height : 100%;
-body {
-    background-image: url("../Components/Assets/background.jpg");
-    background-size: cover;
-    background-repeat:no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-  
+// width : 100%;
+// height : 100%;  
   .product-page {
-    padding: 32px;
+    padding: 25px;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap
     align-items: center;
     gap: 24px;
     height: 100vh;
     width: 100vw;
-    align-items: stretch;
+    // background: blue; 
   }
   .pricing-cards {
-    margin-bottom: 5px;
-    display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 100%;
+    height:100%;
+    // background:green
+
   }
   .offer-cards {
     margin-bottom: 20px;
   }
   .about-section {
-    padding: 32px;
-    display: flex;
+    // padding-left: 15px;
+    // display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 80%;
-    /* background: linear-gradient(to right, #ecf2ff, #fbfcff); */
+    width: 100%;
+    height:100%;
+    // background: linear-gradient(to right, #ecf2ff, #fbfcff); 
   }
-  .about-section h2 {
-    margin-top: -70px;
-  }
+ 
   h2,
   h4 {
     text-align: left;
   }
   /* Image */
   .about-image-content {
-    margin-top: 5px;
     width: 100%;
     max-width: 100%;
     text-align: left;
-    align-items: stretch;
   }
   .about-image1 {
-    width: 80%;
-    margin-top: 5px;
+    width: 100%;
+    padding: 10px;
     height: auto;
     border-radius: 12px;
   }
@@ -72,7 +62,6 @@ body {
   }
   
   .about-description {
-    margin: 32px 0;
     margin-top: 5px;
     color: #4d4b4b;
     font-family: "Rubik", sans-serif;
@@ -80,20 +69,21 @@ body {
     line-height: 1.5rem;
   }
   .about-text-title {
-    /* margin: 0 0 24px 0; */
     font-family: "Poppins", sans-serif;
     margin-left: 10px;
+    margin-bottom:10px;
   }
   /* Steps */
-  .about-text-step {
-    margin: 16px 0;
-  }
+  // .about-text-step {
+  //   margin: 16px 0;
+  // }
   .about-text-sTitle {
     font-family: "Rubik", sans-serif;
     font-size: 18px;
+    margin-bottom:10px;
   }
   .about-text-description {
-    margin: 8px 24px;
+    // margin: 8px 24px;
     color: #4d4b4b;
     font-family: "Rubik", sans-serif;
     margin-left: 10px;
@@ -102,33 +92,34 @@ body {
   }
   .fa-icon {
     color: darkgreen;
-    margin-top: 10px;
+    margin-left: 10px;
   }
   .about-details {
     display: flex;
   }
   .subscription-card {
-    width: 600;
-    height: 100px;
-    margin: 10px;
+    // width: 100%;
+    height: 120px;
+    margin: 15px;
     border: 1px solid #ccc;
     box-shadow: 0 1px 0 0 gray;
     border-radius: 15px;
     display: flex;
     justify-content: space-between;
     background-color: #f2f2f2;
+    // background: linear-gradient(to right, #ecf2ff, #fbfcff); 
   }
   
   .card-price {
-    padding: 5px;
+    margin-left:15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
   }
   
   .card-price h3 {
     margin-left: 5px;
-    font-size: 20px;
+    font-size: 1.7rem;
     text-align: left;
   }
   
@@ -182,14 +173,8 @@ body {
   /* Responsive */
   @media screen and (max-width: 1000px) {
     .product-page {
-      display: block;
-    }
-    .pricing-cards {
-      margin-top: -50px;
-      margin-left: 25px;
-    }
-    .about-section {
-      display: block;
+      display: flex;
+      flex-direction:column;
     }
     .about-image-content {
       width: 100%;
@@ -201,20 +186,15 @@ body {
       height: 100%;
     }
     .about-text-content {
-      width: 100%;
+      width: 95%;
+      margin:auto;
     }
   }
   
   @media screen and (max-width: 700px) {
     .product-page {
-      display: block;
-    }
-    .pricing-cards {
-      margin-top: -50px;
-      margin-left: 25px;
-    }
-    .about-section {
-      display: block;
+      display: flex;
+      flex-direction:column;
     }
     .about-image-content {
       width: 100%;
@@ -223,11 +203,11 @@ body {
     }
     .about-image1 {
       width: 100%;
-      height: 100%;
-      
+      height: 100%; 
     }
     .about-text-content {
-      width: 100%;
+      width: 95%;
+      margin:auto;
     }
   }
   

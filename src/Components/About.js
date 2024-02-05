@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../styles/Product.css"
+
 
 const About = (props) => {
   return (

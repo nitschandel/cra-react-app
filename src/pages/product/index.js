@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as AuthUtils from '../../utils/auth.js';
 import ProductWrapper from './styles/product.style.js';
-import pic1 from "./Assets/pic1.jpg"
-import PricingCard from './PricingCard'
-import About from './About'
+import pic1 from "../../Components/Assets/pic1.jpg"
+import PricingCard from '../../Components/PricingCard.js'
+import About from '../../Components/About.js'
 import { faClock, faComment } from '@fortawesome/free-solid-svg-icons'
 
 function Product(props) {
