@@ -11,7 +11,7 @@ const BatchWrapper = styled.div`
     padding:20px;
     display: flex;
     flex-direction: column;
-    background-color:green;
+    // background-color:green;
   }
   
   .slot-image-content {
