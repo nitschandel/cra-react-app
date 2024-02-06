@@ -5,7 +5,7 @@ import { faClock } from '@fortawesome/free-solid-svg-icons';
 const SlotButton = (props) => {
     return (
         <div className="time-card">
-            <div className="time">
+            <div className="time-slot">
                 <div className='clock'>
                     <FontAwesomeIcon className="icon2" icon={faClock} />
                     <h4>{props.time1} {props.meridean1}-{props.time2} {props.meridean2}</h4>
