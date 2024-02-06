@@ -14,7 +14,10 @@ const ProductWrapper = styled.div`
     // background: blue; 
   }
   .pricing-cards {
+    // display:flex;
     flex-direction: column;
+    // justify-content: space-around;
+    // align-items: stretch;
     width: 100%;
     height:100%;
     // background:green
@@ -76,6 +79,7 @@ const ProductWrapper = styled.div`
   /* Steps */
   // .about-text-step {
   //   margin: 16px 0;
+  //   display:flex;
   // }
   .about-text-sTitle {
     font-family: "Rubik", sans-serif;

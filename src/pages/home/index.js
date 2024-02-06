@@ -7,7 +7,7 @@ import InfoCard from '../../Components/InfoCard.js';
 import { Link } from 'react-router-dom';
 
 function Home(props) {
-
+       
     return <HomeWrapper>
         <div className="info-section" id="services">
             <div className="info-title-content">
@@ -17,7 +17,7 @@ function Home(props) {
                     </p>
 
                     <p className="info-description">
-                        Watch our Lead Yoga Therapist, <Link to="https://www.youtube.com/watch?v=hJbRpHZr_d0&pp=ygUTeW9nYSB2aWRlbyBmb3IgbWluZA%3D%3D">Ms Uma Subramaniam</Link> explain Yoga for Mind
+                        Watch our Lead Yoga Therapist,<span> Ms Uma Subramaniam</span> explain Yoga for Mind
                     </p>
                 </div>
 

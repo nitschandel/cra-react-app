@@ -1,106 +1,130 @@
 import styled from 'styled-components';
 
 const HomeWrapper = styled.div`
-// width : 100%;
-// height : 100%;
+width : 100vw;
+height : 100vh;
 .info-section {
-    padding: 32px;
-    height: 80vh;
-    width: 100vw;
-    gap: 24px;
-    background: linear-gradient(to right, #a9cac3, #063215);
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    // gap: 24px;
+    // background: linear-gradient(to right, #a9cac3, #063215);
   }
-  .title {
-    margin: 0 0 0 8px;
+
+  .info-title-content {
+    // margin: 0 0 0 8px; 
+    padding: 10px;
     display: flex;
+    // flex-wrap: wrap;
+    justify-content: space-between;
+    // align-items: center; 
+    width: 100%;
+    height: 50%; 
+    //  background:red;
+  }
+
+  .title {
+    // margin: 0 0 0 8px;
+    // display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 500px;
+    width: 50%;
+    height:50%;
+    // background: white;
   }
-  .info-title-content {
-    /* margin: 0 0 0 8px; */
-    padding: 32px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    /* gap: 100px; */
-    /* width: 200px;
-      height: 400px; */
-  }
+ 
   .info-title {
+    padding: 10px;
     font-family: "Poppins", sans-serif;
-    font-size: 25px;
+    font-size: 28px;
     font-weight: bold;
-    
+    text-align: left;
+  }
+  .info-description {
+    margin: 15px 0 0 0;
+    padding-left: 10px;
+    color: #4d4b4b;
+    font-family: "Rubik", sans-serif;
+    font-size: 25px;
+    line-height: 1.7rem;
   }
   
   .video {
+    padding: 10px;
     width: 50%;
+    // background:blue;
   }
   .thumbnail {
-    height: 200px;
-    width: 350px;
+    height: 100%;
+    width: 80%;
     border-radius: 8px;
     border: none;
   }
-  .info-description {
-    margin: 6px 0 0 0;
-    color: #4d4b4b;
-    font-family: "Rubik", sans-serif;
-    font-size: 18px;
-    line-height: 1.7rem;
-  }
   .tagline {
-      text-align: left;
-      margin-bottom: 5px;
+    padding: 10px;
+    font-size:25px;
+    text-align: left;
+    // margin-bottom: 5px;
+  }
+  span{
+    color:salmon;
   }
   /* Cards */
   .info-cards-content {
-    /* width: 100%; */
-    margin: auto;
-    display: flex;
+    width: 100%; 
+    height: 40%;
+    display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 100px;
+    // background:darkblue;
   }
   .info-cards {
-    height: auto;
+    // height: auto;
     border: none;
     border-radius: 8px;
     background-color: transparent;
+    padding-left: 5px;
+    padding-right: 5px;
     padding-top: 25px;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
     width: 250px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
   }
   
   .info-card-description {
+    text-align:center;
     margin: 24px;
     color: black;
     font-family: "Rubik", sans-serif;
     font-size: 15px;
-    line-height: 1.5rem;
+    line-height: 1.7rem;
+  }
+  .info-icon{
+    text-align: center;
+    margin-bottom: 20px;
   }
   .info-card-icon {
-    margin-top: 20px;
-    /* top: -24px; */
-    left: 44%;
-    padding: 10px;
-    background-color: #dce6ff;
-    border-radius: 50px;
+    padding: 30px;
+    border-radius: 50%;
+    background-color: lightgray;
   }
   .info-fa-icon {
     color: #2c96ff;
-    font-size: 24px;
+    height:2.5rem;
+   
   }
   
   .card-btn {
+    margin: 0px 20px;
     padding: 10px 20px;
     border-radius: 50px;
     outline: transparent;
-    background-color: white;
+    background-color: salmon;
     font-size: 20px;
     font-family: "Rubik", sans-serif;
     cursor: pointer;
@@ -112,6 +136,7 @@ const HomeWrapper = styled.div`
   }
   a {
     color: rgb(158, 83, 83);
+    text-align:center;
   }
   a:hover {
     color: black;
@@ -119,18 +144,38 @@ const HomeWrapper = styled.div`
   /* Responsive */
   @media screen and (max-width: 1000px) {
     .info-section {
-      padding: 15px;
+      // padding: 15px;
       height: 100vh;
+      display:flex;
+      flex-direction: column;
+    }
+    .info-title{
+      text-align:center;
+    }
+    .info-title-content {
+      padding: 20px;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: space-around;
+    }
+  
+    .title {
+      text-align: center;
+      width: 100%;
+      height:30%;
     }
     .info-description {
-      margin: 64px 32px;
+      margin: 10px 10px;
+    }
+
+    .video {
+      padding: 10px;
+      height: 80%;
+      width: 100vw;
     }
     .card-btn {
       font-size: 15px;
-    }
-    .info-cards {
-      padding-top: 25px;
-      padding-bottom: 5px;
     }
     .info-title-content {
       justify-content: space-evenly;
@@ -141,9 +186,38 @@ const HomeWrapper = styled.div`
     .info-section {
       padding: 10px;
       height: 100vh;
+      height: 100vh;
+      display:flex;
+      flex-direction: column;
+      flex-wrap:wrap;
     }
     .info-description {
       margin: 64px 8px;
+    }
+    .info-title{
+      text-align:center;
+    }
+    .info-title-content {
+      padding: 20px;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: space-around;
+    }
+  
+    .title {
+      text-align: center;
+      width: 100%;
+      height:30%;
+    }
+    .info-description {
+      margin: 10px 10px;
+    }
+
+    .video {
+      padding: 10px;
+      height: 80%;
+      width: 100vw;
     }
     .card-btn {
       font-size: 10px;
@@ -152,8 +226,14 @@ const HomeWrapper = styled.div`
       padding-top: 25px;
       padding-bottom: 2px;
     }
-    .info-title-content {
-      justify-content: space-evenly;
+    .info-cards-content {
+      width: 100%; 
+      height: 30%;
+      display:flex;
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 20px;
+      flex-wrap:wrap;
     }
   }
   
