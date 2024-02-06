@@ -28,7 +28,7 @@ function Login(props) {
             return;
         }
         if (!acceptAgreement) {
-            toast("Please accept the agrrement before proceeding.");
+            toast("Please accept the agreement before proceeding.");
             return;
         }
         setShowOtpInput(true);
@@ -41,11 +41,11 @@ function Login(props) {
         }
         AuthUtils.saveAuthCookie();
     }
-    const loginText = showOtpInput ? "Enter the OTP" : "Login to your account";
+    // const loginText = showOtpInput ? "Enter the OTP" : "Login to your account";
     return <LoginWrapper>
         <div className='login-container'>
             <div className='login-box'>
-                <h2>{loginText}</h2>
+                <div className='heading'><h2>{showOtpInput ? "Enter the OTP" : "Login to your account"}</h2></div>
                 <div className='phone-input'>
                     {showOtpInput ?
                         <OtpInput
@@ -68,6 +68,7 @@ function Login(props) {
                         />}
                 </div>
                 {!showOtpInput &&
+                   
                     <div className='agreement-box'>
                         <input type="checkbox" checked={acceptAgreement} onChange={evt => setAcceptAgreement(evt.target.checked)} />
                         <p>

@@ -48,7 +48,7 @@ const BatchWrapper = styled.div`
   h3 {
     text-align: left;
     font-size: 20px;
-    margin: 10px;
+    margin: 4px;
   }
   
   .change-plan {

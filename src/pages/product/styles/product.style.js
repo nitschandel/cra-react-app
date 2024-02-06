@@ -6,25 +6,20 @@ const ProductWrapper = styled.div`
   .product-page {
     padding: 25px;
     display: flex;
-    flex-wrap: wrap
     align-items: center;
+    justify-content:space-between;
     gap: 24px;
     height: 100vh;
     width: 100vw;
     // background: blue; 
   }
   .pricing-cards {
-    // display:flex;
-    flex-direction: column;
-    // justify-content: space-around;
-    // align-items: stretch;
     width: 100%;
     height:100%;
     // background:green
-
   }
   .offer-cards {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   .about-section {
     // padding-left: 15px;
@@ -37,18 +32,19 @@ const ProductWrapper = styled.div`
   }
  
   h2,
-  h4 {
+  h4,p {
     text-align: left;
+    margin: 5px;
   }
   /* Image */
   .about-image-content {
     width: 100%;
     max-width: 100%;
-    text-align: left;
+    // text-align: left;
   }
   .about-image1 {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     height: auto;
     border-radius: 12px;
   }
@@ -73,7 +69,7 @@ const ProductWrapper = styled.div`
   }
   .about-text-title {
     font-family: "Poppins", sans-serif;
-    margin-left: 10px;
+    margin-left: 15px;
     margin-bottom:10px;
   }
   /* Steps */
@@ -182,6 +178,7 @@ const ProductWrapper = styled.div`
     }
     .about-image-content {
       width: 100%;
+      height: 70%;
       max-width: 100%;
       margin: 0 0 32px 0;
     }
@@ -202,6 +199,7 @@ const ProductWrapper = styled.div`
     }
     .about-image-content {
       width: 100%;
+      height:60%;
       max-width: 100%;
       margin: 0 0 32px 0;
     }
@@ -214,7 +212,8 @@ const ProductWrapper = styled.div`
       margin:auto;
     }
   }
-  
+
+  }
 
 `;
 

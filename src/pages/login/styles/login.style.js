@@ -9,11 +9,22 @@ height : 100%;
     align-items: center;
     text-align: center;
     min-height: 100vh;
+    .heading{
+        margin-left:10px;
+    }
+    h2{
+        font-size:40px;
+        text-align:left;
+        padding-bottom:10px;
+        color:teal;
+    }
     .phone-input{
         width: max-content;
-        margin: 0 auto;
+        align-items:left;
+        margin: 10px;
         input{
             background: inherit;
+            height:4em;
         }
         .flag-dropdown {
             background: inherit;
@@ -27,15 +38,29 @@ height : 100%;
             margin: 10px auto;
         }
     }
+    a{
+        color:salmon;
+    }
+    p{
+        font-size:10px;
+        text-align:left;
+    }
+    input[type="checkbox"] {
+        accent-color: salmon;
+      }
     .agreement-box{
         display: flex;
+        align-items:center;
+        margin-top:20px;
+        margin-left:30px;
         input{
-            margin-right: 10px;
+            margin-right: 50px;
             cursor: pointer;
         }
     }
     .button-container{
-        button{margin-top: 15px;
+        margin-left:20px;
+        button{margin-top: 40px;
             width: 150px;
             font-size: 18px;
             font-weight: 500;
@@ -56,6 +81,19 @@ height : 100%;
             }
         }
     }
+    @media screen and (max-width: 700px){
+        .login-box{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            // text-align:center;
+        }
+        .heading{
+            margin-left:-105px;
+            text-align: left;
+            width: 50%;
+        }
+        
   }
 
 `;
