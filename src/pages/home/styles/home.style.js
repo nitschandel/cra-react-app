@@ -112,21 +112,23 @@ height : 100vh;
     padding: 30px;
     border-radius: 50%;
     background-color: lightgray;
+    display: inline-block;
+    border-radius: 50px;
+    padding: 1em 1em;
   }
   .info-fa-icon {
     color: #2c96ff;
     height:2.5rem;
    
   }
-  
+ 
   .card-btn {
     margin: 0px 20px;
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 50px;
     outline: transparent;
     background-color: salmon;
     font-size: 20px;
-    font-family: "Rubik", sans-serif;
     cursor: pointer;
     transition: all 0.4s ease;
   }
@@ -177,6 +179,7 @@ height : 100vh;
     }
     .card-btn {
       font-size: 15px;
+      padding: 5px;
     }
     .info-title-content {
       justify-content: space-evenly;
@@ -221,7 +224,9 @@ height : 100vh;
       width: 80vw;
     }
     .card-btn {
+      margin: 0 70px;
       font-size: 10px;
+      padding: 5px 0px;
     }
     .info-cards {
       padding-top: 25px;
