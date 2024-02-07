@@ -171,8 +171,9 @@ height : 100vh;
 
     .video {
       padding: 10px;
-      height: 80%;
-      width: 100vw;
+      height: 80vh;
+      width: 60vw;
+      margin-top:10px;
     }
     .card-btn {
       font-size: 15px;
@@ -208,7 +209,7 @@ height : 100vh;
     .title {
       text-align: center;
       width: 100%;
-      height:30%;
+      height:50%;
     }
     .info-description {
       margin: 10px 10px;
@@ -217,7 +218,7 @@ height : 100vh;
     .video {
       padding: 10px;
       height: 80%;
-      width: 100vw;
+      width: 80vw;
     }
     .card-btn {
       font-size: 10px;

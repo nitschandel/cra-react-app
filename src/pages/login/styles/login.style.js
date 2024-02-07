@@ -59,7 +59,7 @@ height : 100%;
         }
     }
     .button-container{
-        margin-left:20px;
+        // margin-left:5px;
         button{margin-top: 40px;
             width: 150px;
             font-size: 18px;

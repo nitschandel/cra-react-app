@@ -55,7 +55,7 @@ function Login(props) {
                             renderSeparator={<span className='otp-seprator'>-</span>}
                             renderInput={(props) => <input {...props} />}
                             inputStyle={{
-                                width: "3em",
+                                width: "4em",
                                 border: "1px solid black",
                                 borderRadius: "5px",
                                 height: "4em"
