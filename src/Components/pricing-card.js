@@ -3,19 +3,21 @@ import PricingWrapper from './styles/pricing-card.style'
 
 
 const PricingCard = (props) => {
+    const { product, onSelectPackage } = props;
+    const { months, oldPrice, currentPrice } = product;
     return (
         <PricingWrapper>
             <div className="subscription-card">
                 <div className="card-price">
-                    <h3>{props.month} Months</h3>
-                    <div className='offer'><span className='strikethrough'>₹{props.price}</span>
-                        <p className='new-price'>₹{props.offered}</p>
+                    <h3>{months} Months</h3>
+                    <div className='offer'><span className='strikethrough'>₹{oldPrice}</span>
+                        <p className='new-price'>₹{currentPrice}</p>
                     </div>
                 </div>
 
                 <div className="card-button">
-                    <p>{props.MonthlyPrice}/month</p>
-                    <button>Buy Now</button>
+                    <p>{parseInt(currentPrice/months)}/month</p>
+                    <button onClick={() => onSelectPackage(product.id)}>Buy Now</button>
                 </div>
             </div>
         </PricingWrapper>

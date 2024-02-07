@@ -1,10 +1,48 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import BatchWrapper from './styles/batch.style.js';
-import { Link } from 'react-router-dom';
-import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons'; import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link, useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons'; import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SlotButton from '../../components/slot-button.js';
 import ButtonCard from '../../components/button-card.js';
+
+import * as ProductActions from '../../actions/product.js';
+import Loader from '../../components/loader.js';
+
 function Batch(props) {
+    const { dispatch, product } = props;
+    const navigate = useNavigate();
+    const [timeSlots, setTimeSlots] = useState('');
+    const [ packageSlot, setPackageSlot] = useState({});
+
+    useEffect(() => {
+        dispatch(ProductActions.getPackageSlots());
+    }, []);
+
+    if (product.isPackageSlotFetching) {
+        return <Loader />;
+    }
+
+    const onSelectDate = (date) => {
+        const selectedSlot = product.packageSlots.find(slot => slot.date === date);
+        setTimeSlots(selectedSlot.timeSlots);
+        setPackageSlot({...packageSlot, date, slotId : undefined });
+    }
+
+    const onSelectSlot = (slotId) => {
+        setPackageSlot({...packageSlot, slotId });
+    }
+
+    const onBuyPackage = () => {
+        toast.success("Package bought successfully");
+        dispatch(ProductActions.buyPackage(packageSlot));
+        setTimeout(() => {
+            navigate("/");
+        }, 3000)
+        
+    }
 
     return <BatchWrapper>
         <div className='slot'>
@@ -29,80 +67,31 @@ function Batch(props) {
             <p>Dates are available only for the next 2 weeks</p>
             <div className='booking'>
                 <div className='slot-button'>
-                    <FontAwesomeIcon className="icon1" icon={faCaretLeft} />
-                    <ButtonCard
-                        date="29th"
-                        month="Jan"
-                        day="Mon"
-                    />
-                    <ButtonCard
-                        date="30th"
-                        month="Jan"
-                        day="Tue"
-                    />
-                    <ButtonCard
-                        date="31st"
-                        month="Jan"
-                        day="Wed"
-                    />
-                    <ButtonCard
-                        date="1st"
-                        month="Feb"
-                        day="Thur"
-                    />
-                    <ButtonCard
-                        date="2nd"
-                        month="Feb"
-                        day="Fri"
-                    />
-                    <ButtonCard
-                        date="3rd"
-                        month="Feb"
-                        day="Sat"
-                    />
-                    <ButtonCard
-                        date="4th"
-                        month="Feb"
-                        day="Sun"
-                    />
-                    <ButtonCard
-                        date="4th"
-                        month="Feb"
-                        day="Sun"
-                    />
-                    <ButtonCard
-                        date="4th"
-                        month="Feb"
-                        day="Sun"
-                    />
-                    <ButtonCard
-                        date="4th"
-                        month="Feb"
-                        day="Sun"
-                    />
-                    <FontAwesomeIcon className="icon1" icon={faCaretRight} />
+                    {product.packageSlots.map((slot, i) => (<ButtonCard key={i}
+                                                            date={slot.date} 
+                                                            onSelectDate={onSelectDate}
+                                                            isSelected={slot.date === packageSlot.date}
+                                                            />))}
                 </div>
-                <div className='week-button'>
-                    <h2>Select Time Slot</h2>
+                {timeSlots.length > 0 &&
+                    <div className='week-button'>
+                        <h2>Select Time Slot</h2>
 
-                    <SlotButton
-                        time1="5:00"
-                        meridean1="PM"
-                        time2="6:00"
-                        meridean2="PM"
-                    />
-                    <SlotButton
-                        time1="8:00"
-                        meridean1="AM"
-                        time2="9:00"
-                        meridean2="AM"
-                    />
-                </div>
+                        {timeSlots.map((slot, i) => <SlotButton key={i} 
+                                                            slot={slot} 
+                                                            onSelectSlot={onSelectSlot}
+                                                            isSelected={slot.id === packageSlot.slotId}/>)}
+                    </div>}
             </div>
-            <button>Buy Package</button>
+            {timeSlots.length > 0 && <button onClick={onBuyPackage}>Buy Package</button>}
         </div>
+        <Toaster />
 
     </BatchWrapper >
 }
 
-export default Batch;
+function mapStateToProps(state) {
+    return state;
+}
+
+export default connect(mapStateToProps)(Batch);

@@ -17,7 +17,7 @@ const routes = (
 		<Route path="/" element={<AuthApp />}>
 			<Route exact path="/" element={<Home />} />
 			<Route exact path="/product" element={<Product />} />
-			<Route exact path="/batch" element={<Batch />} />
+			<Route exact path="/batch/:packageId" element={<Batch />} />
 		</Route>
 	</Routes>
 );

@@ -13,6 +13,7 @@ height : 100%;
     font-size: 18px;
     .about-details {
         display: flex;
+        align-items: baseline;
     }
   
     .about-text-description {

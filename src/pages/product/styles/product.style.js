@@ -22,13 +22,14 @@ const ProductWrapper = styled.div`
     margin-bottom: 40px;
   }
   .about-section {
-    // padding-left: 15px;
-    // display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
     height:100%;
-    // background: linear-gradient(to right, #ecf2ff, #fbfcff); 
+
+    @media screen and (max-width: 1000px) {
+      height: fit-content;
+    }
   }
  
   h2,
@@ -56,7 +57,7 @@ const ProductWrapper = styled.div`
   .about-title {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 400;
     text-align: left;
   }
   
@@ -96,10 +97,11 @@ const ProductWrapper = styled.div`
   }
   .about-details {
     display: flex;
+    align-items: baseline;
   }
   .subscription-card {
     // width: 100%;
-    height: 120px;
+    height: 75px;
     margin: 15px;
     border: 1px solid #ccc;
     box-shadow: 0 1px 0 0 gray;
@@ -149,7 +151,7 @@ const ProductWrapper = styled.div`
     /* text-align: center; */
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .card-button p {
     font-size: 14px;
@@ -173,8 +175,7 @@ const ProductWrapper = styled.div`
   /* Responsive */
   @media screen and (max-width: 1000px) {
     .product-page {
-      display: flex;
-      flex-direction:column;
+      display: block;
     }
     .about-image-content {
       width: 100%;
@@ -194,8 +195,7 @@ const ProductWrapper = styled.div`
   
   @media screen and (max-width: 700px) {
     .product-page {
-      display: flex;
-      flex-direction:column;
+      display: block;
     }
     .about-image-content {
       width: 100%;

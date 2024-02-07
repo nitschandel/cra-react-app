@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import LoginWrapper from './styles/login.style.js';
 import PhoneInput from 'react-phone-input-2';
-import { ToastContainer, toast } from 'react-toastify';
+import toast, { Toaster } from 'react-hot-toast';
 import OtpInput from 'react-otp-input';
 import * as AuthUtils from '../../utils/auth';
+import * as UserActions from '../../actions/user.js';
 
 import 'react-phone-input-2/lib/style.css'
 import { useNavigate } from 'react-router';
+import { connect } from 'react-redux';
 
 function Login(props) {
+    const { dispatch } = props;
     const [phone, setPhone] = useState("");
     const [acceptAgreement, setAcceptAgreement] = useState(false);
     const [showOtpInput, setShowOtpInput] = useState(false);
@@ -24,11 +27,11 @@ function Login(props) {
 
     const sendOtpHandler = () => {
         if (!phone) {
-            toast("Please enter the phone number.");
+            toast.error("Please enter the phone number.");
             return;
         }
         if (!acceptAgreement) {
-            toast("Please accept the agreement before proceeding.");
+            toast.error("Please accept the agreement before proceeding.");
             return;
         }
         setShowOtpInput(true);
@@ -36,12 +39,18 @@ function Login(props) {
 
     const enterOtpHandler = () => {
         if (otp.length < 4) {
-            toast("Please enter the OTP.");
+            toast.error("Please enter the OTP.");
             return;
         }
-        AuthUtils.saveAuthCookie();
+        const requestBody = {
+            phone,
+            otp
+        }
+        dispatch(UserActions.authenticateUser(requestBody, (err) => {
+            toast(err.message);
+        }));
     }
-    // const loginText = showOtpInput ? "Enter the OTP" : "Login to your account";
+    
     return <LoginWrapper>
         <div className='login-container'>
             <div className='login-box'>
@@ -86,8 +95,12 @@ function Login(props) {
 
             </div>
         </div>
-        <ToastContainer theme="dark" className={{ type: "warning" }} />
+        <Toaster />
     </LoginWrapper>
 }
 
-export default Login;
+function mapStateToProps(state) {
+    return state;
+}
+
+export default connect(mapStateToProps)(Login);

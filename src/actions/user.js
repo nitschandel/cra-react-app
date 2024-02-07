@@ -1,9 +1,49 @@
-import * as ActionTypes from '../constants/action-types';
+import * as ActionTypes from '../constants/actions';
+import * as UserApis from '../apis/user';
 
 //Utils
 import * as AuthUtils from '../utils/auth';
-import * as UrlUtils from '../constants/url';
 
+
+export function authenticateUser(requestBody, errorCallback) {
+  return async (dispatch) => {
+    dispatch(toggleAuthInProgress());
+    const response = await UserApis.authenticateUser(requestBody);
+
+    if (response.success) {
+      dispatch(setCurrentUser(response.user));
+      dispatch(toggleAuthInProgress());
+      AuthUtils.saveAuthCookie();
+      window.location.reload();
+    } else {
+      errorCallback(response.error);
+    }
+
+  };
+}
+
+export function getCurrentUser() {
+  return async (dispatch) => {
+    const response = await UserApis.getCurrentUser();
+    if (response.success) {
+      dispatch(setCurrentUser(response.user));
+    } else {
+      if(response.error.code === 401){
+        AuthUtils.removeAuthCookie();
+        window.location.reload();
+      }
+    }
+
+  };
+}
+
+export function logoutUser() {
+  return (dispatch) => {
+    dispatch(unsetCurrentUser());
+    AuthUtils.removeAuthCookie();
+    window.location.reload();
+  };
+}
 
 function toggleAuthInProgress() {
   return {
@@ -21,29 +61,6 @@ function setCurrentUser(user) {
 function unsetCurrentUser() {
   return {
     type: ActionTypes.USER.UNSET_CURRENT_USER
-  };
-}
-
-export function authenticateUser(requestBody) {
-  return (dispatch) => {
-    dispatch(toggleAuthInProgress());
-    // UserApis.authenticateUser(requestBody)
-    //   .then((response) => {
-        dispatch(setCurrentUser(requestBody));
-        dispatch(toggleAuthInProgress());
-        AuthUtils.saveAuthCookie(requestBody.accessToken);
-      // })
-      // .catch(() => {
-      //   dispatch(toggleAuthInProgress());
-      // });
-  };
-}
-
-export function logoutUser() {
-  return (dispatch) => {
-    dispatch(unsetCurrentUser());
-    AuthUtils.removeAuthCookie();
-    window.location.href = UrlUtils.LOGIN;
   };
 }
 

@@ -5,9 +5,8 @@ const PricingWrapper = styled.div`
 width : 100%;
 height : 100%;
 .subscription-card {
-    width: 600;
-    height: 100px;
-    margin: 10px;
+    height: 75px;
+    margin: 15px 10px;
     border: 1px solid #ccc;
     box-shadow: 0 1px 0 0 gray;
     border-radius: 15px;
@@ -46,7 +45,7 @@ height : 100%;
         /* text-align: center; */
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-between;
       
         p {
             font-size: 14px;

@@ -12,6 +12,11 @@ const BatchWrapper = styled.div`
     flex-direction: column;
     // background-color:green;
   }
+  .selected{
+    background-color: #e68e8e !important;
+    border: none !important;
+    color: #FFF;
+  }
   
   .slot-image-content {
     width: 100%;
@@ -35,6 +40,7 @@ const BatchWrapper = styled.div`
     // text-align: left;
     margin: 10px;
     margin-left: 20px;
+    margin-bottom: 30px;
   }
   
   .icon1 {
@@ -51,9 +57,13 @@ const BatchWrapper = styled.div`
   }
   
   .change-plan {
-    margin: 15px;
     display: flex;
     gap: 10px;
+    margin: 5px;
+    margin-bottom: 30px;
+    a{
+      color: salmon;
+    }
   }
   .button-card {
     width: 100px;
@@ -71,9 +81,9 @@ const BatchWrapper = styled.div`
     justify-content:space-between;
   }
   .button-card:hover {
-    background-color: darkgreen;
     border: none;
     box-shadow: 0 1px 0 0 rgb(1, 46, 1);
+    cursor: pointer;
   }
   
   .button-time {
@@ -104,7 +114,7 @@ const BatchWrapper = styled.div`
     gap: 20px;
     // justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
   
   .time-card {
@@ -119,7 +129,6 @@ const BatchWrapper = styled.div`
   }
   
   .time-card:hover {
-    background-color: darkgreen;
     border: none;
     box-shadow: 0 1px 0 0 rgb(1, 46, 1);
     cursor: pointer;
@@ -158,14 +167,16 @@ const BatchWrapper = styled.div`
     color: #fff;
     border: none;
     border-radius: 20px;
-    padding: 5px;
+    padding: 8px 10px;
     cursor: pointer;
-    width: 90px;
+    width: 120px;
+    margin-top: 25px;
   }
   
   button:hover {
     background-color: rgb(161, 166, 161);
   }
+  
   
   /* Media Queries for Responsiveness */
   
@@ -179,8 +190,7 @@ const BatchWrapper = styled.div`
       margin: 10px 0;
       height: 15vh;
     }
-    .slot-button { 
-      height:20px;
+    .slot-button {
       flex-wrap: wrap; 
       text-align: center;
       align-items: center;
@@ -208,8 +218,7 @@ const BatchWrapper = styled.div`
       margin: 10px 0;
       height: 15vh;
     }
-    .slot-button { 
-      height:20px;
+    .slot-button {
       flex-wrap: wrap; 
       text-align: center;
       align-items: center;

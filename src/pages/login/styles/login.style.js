@@ -21,7 +21,7 @@ height : 100%;
     .phone-input{
         width: max-content;
         align-items:left;
-        margin: 10px;
+        margin: 30px auto;
         input{
             background: inherit;
             height:4em;
@@ -35,7 +35,7 @@ height : 100%;
             height: 4em;
         }
         .otp-seprator{
-            margin: 10px auto;
+            margin: 10px;
         }
     }
     a{
@@ -50,17 +50,17 @@ height : 100%;
       }
     .agreement-box{
         display: flex;
-        align-items:center;
-        margin-top:20px;
-        margin-left:30px;
+        align-items: center;
+        margin: 20px auto;
+        justify-content: center;
         input{
-            margin-right: 50px;
+            margin-right: 10px;
             cursor: pointer;
         }
     }
     .button-container{
         // margin-left:5px;
-        button{margin-top: 40px;
+        button{
             width: 150px;
             font-size: 18px;
             font-weight: 500;
@@ -93,7 +93,10 @@ height : 100%;
             text-align: left;
             width: 50%;
         }
-        
+        h2{
+            font-size: 26px;
+            width: max-content;
+        }
   }
 
 `;

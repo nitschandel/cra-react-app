@@ -1,13 +1,32 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import * as AuthUtils from '../../utils/auth.js';
-import ProductWrapper from './styles/product.style.js';
+//Components
 import PricingCard from '../../components/pricing-card.js'
-import { faClock, faComment } from '@fortawesome/free-solid-svg-icons'
+import { faClock, faComment } from '@fortawesome/free-solid-svg-icons';
 import About from '../../components/about.js';
+import Loader from '../../components/loader.js';
+
+import ProductWrapper from './styles/product.style.js';
+
+import * as ProductActions from '../../actions/product.js';
 
 function Product(props) {
-   
+    const { dispatch, product } = props;
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        dispatch(ProductActions.getPackageList());
+    }, []);
+
+    if (product.isPackageListFetching) {
+        return <Loader />;
+    }
+
+    const onSelectPackage = (id) => {
+        navigate("/batch/" + id);
+    }
+
     return <ProductWrapper>
         <div className='product-page'>
             <div className="about-section" >
@@ -31,38 +50,30 @@ function Product(props) {
             <div className='pricing-cards'>
                 <h2 className="about-text-title">Choose your package</h2>
                 <div className='offer-cards'>
-                <PricingCard 
-                    month="6"
-                    price="12999"
-                    offered="5499"
-                    MonthlyPrice="916"
-                />
-                <PricingCard
-                    month="3"
-                    price="5999"
-                    offered="2999"
-                    MonthlyPrice="999"
-                />
-                <PricingCard
-                    month="1"
-                    price="1999"
-                    offered="1199"
-                    MonthlyPrice="1199"
-                />
+                    {product.packageList.map((prod,i) =>
+                        <PricingCard
+                            product={prod}
+                            onSelectPackage={onSelectPackage}
+                            key={i}
+                        />)}
                 </div>
-                
+
                 <h2 className="about-text-title">What you'll get</h2>
                 <About
-                iconName={faComment}
-                description="A chat group on the Elda app where you can connect with your trainer and the rest of the Elda Yoga Community"
+                    iconName={faComment}
+                    description="A chat group on the Elda app where you can connect with your trainer and the rest of the Elda Yoga Community"
                 />
                 <About
-                iconName={faClock}
-                description="Ability to reschedule your class if you miss your session"
+                    iconName={faClock}
+                    description="Ability to reschedule your class if you miss your session"
                 />
             </div>
         </div>
     </ProductWrapper>
 }
 
-export default Product;
+function mapStateToProps(state) {
+    return state;
+}
+
+export default connect(mapStateToProps)(Product);

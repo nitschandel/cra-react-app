@@ -32,6 +32,11 @@ height : 100vh;
     align-items: center;
     width: 50%;
     height:50%;
+    padding-right: 100px;
+    @media screen and (max-width: 700px) {
+      padding-right: 0px;
+      height: 100% !important;
+    }
     // background: white;
   }
  
@@ -39,16 +44,29 @@ height : 100vh;
     padding: 10px;
     font-family: "Poppins", sans-serif;
     font-size: 28px;
-    font-weight: bold;
-    text-align: left;
+    font-weight: 400;
+    text-align: left; 
+    @media screen and (max-width: 700px) {
+      padding-top: 20px;
+    }
   }
   .info-description {
     margin: 15px 0 0 0;
     padding-left: 10px;
     color: #4d4b4b;
-    font-family: "Rubik", sans-serif;
-    font-size: 25px;
+    font-family: "Rubik",sans-serif;
+    font-size: 23px;
     line-height: 1.7rem;
+    font-weight: 300;
+  }
+  .info-cards-content {
+    width: 100%; 
+    height: 40%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 100px;
+    // background:darkblue;
   }
   
   .video {
@@ -70,79 +88,10 @@ height : 100vh;
   }
   span{
     color:salmon;
-  }
-  /* Cards */
-  .info-cards-content {
-    width: 100%; 
-    height: 40%;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 100px;
-    // background:darkblue;
-  }
-  .info-cards {
-    // height: auto;
-    border: none;
-    border-radius: 8px;
-    background-color: transparent;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    width: 250px;
-    display:flex;
-    flex-direction:column;
-    justify-content: space-between;
-  }
-  
-  .info-card-description {
-    text-align:center;
-    margin: 24px;
-    color: black;
-    font-family: "Rubik", sans-serif;
-    font-size: 15px;
-    line-height: 1.7rem;
-  }
-  .info-icon{
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .info-card-icon {
-    padding: 30px;
-    border-radius: 50%;
-    background-color: lightgray;
-    display: inline-block;
-    border-radius: 50px;
-    padding: 1em 1em;
-  }
-  .info-fa-icon {
-    color: #2c96ff;
-    height:2.5rem;
-   
-  }
- 
-  .card-btn {
-    margin: 0px 20px;
-    padding: 10px;
-    border-radius: 50px;
-    outline: transparent;
-    background-color: salmon;
     font-size: 20px;
-    cursor: pointer;
-    transition: all 0.4s ease;
+    font-weight: 400;
   }
-  .card-btn:hover {
-    background-color: rgb(13, 68, 13);
-    border: none;
-  }
-  a {
-    color: rgb(158, 83, 83);
-    text-align:center;
-  }
-  a:hover {
-    color: black;
-  }
+
   /* Responsive */
   @media screen and (max-width: 1000px) {
     .info-section {
@@ -176,10 +125,6 @@ height : 100vh;
       height: 80vh;
       width: 60vw;
       margin-top:10px;
-    }
-    .card-btn {
-      font-size: 15px;
-      padding: 5px;
     }
     .info-title-content {
       justify-content: space-evenly;
@@ -227,10 +172,6 @@ height : 100vh;
       margin: 0 70px;
       font-size: 10px;
       padding: 5px 0px;
-    }
-    .info-cards {
-      padding-top: 25px;
-      padding-bottom: 2px;
     }
     .info-cards-content {
       width: 100%; 
