@@ -1,6 +1,5 @@
 
 import styled from 'styled-components';
-import pic1 from "../../../Components/Assets/pic1.jpg";
 
 const BatchWrapper = styled.div`
 // width : 100%;
@@ -17,7 +16,7 @@ const BatchWrapper = styled.div`
   .slot-image-content {
     width: 100%;
     height: 20vh;
-    background: url(${pic1});
+    background: url('/images/pic1.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 8px;

@@ -2,9 +2,8 @@ import React, { useEffect } from 'react';
 import BatchWrapper from './styles/batch.style.js';
 import { Link } from 'react-router-dom';
 import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons'; import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SlotButton from '../../Components/SlotButton';
-import ButtonCard from '../../Components/ButtonCard.js';
-import pic1 from "../../Components/Assets/pic1.jpg";
+import SlotButton from '../../components/slot-button.js';
+import ButtonCard from '../../components/button-card.js';
 function Batch(props) {
 
     return <BatchWrapper>

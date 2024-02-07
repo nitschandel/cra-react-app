@@ -2,10 +2,9 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as AuthUtils from '../../utils/auth.js';
 import ProductWrapper from './styles/product.style.js';
-import pic1 from "../../Components/Assets/pic1.jpg"
-import PricingCard from '../../Components/PricingCard.js'
-import About from '../../Components/About.js'
+import PricingCard from '../../components/pricing-card.js'
 import { faClock, faComment } from '@fortawesome/free-solid-svg-icons'
+import About from '../../components/about.js';
 
 function Product(props) {
    
@@ -15,7 +14,7 @@ function Product(props) {
                 <h2>Yoga for Mind</h2>
                 <div className="about-image-content">
 
-                    <img src={pic1} alt="Doctor Group" className="about-image1" />
+                    <img src="/images/pic1.jpg" alt="Doctor Group" className="about-image1" />
                 </div>
 
                 <div className="about-text-content">
