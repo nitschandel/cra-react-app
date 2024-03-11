@@ -7,6 +7,19 @@ import ButtonCard from '../../Components/ButtonCard.js';
 import pic1 from "../../Components/Assets/pic1.jpg";
 function Batch(props) {
 
+    const dates = [
+        { date: '29th', month: 'Jan', day: 'Mon' },
+        { date: '30th', month: 'Jan', day: 'Tue' },
+        { date: '31st', month: 'Jan', day: 'Wed' },
+        { date: '1st', month: 'Feb', day: 'Thur' },
+        { date: '2nd', month: 'Feb', day: 'Fri' },
+        { date: '3rd', month: 'Feb', day: 'Sat' },
+        { date: '4th', month: 'Feb', day: 'Sun' },
+        { date: '4th', month: 'Feb', day: 'Sun' },
+        { date: '4th', month: 'Feb', day: 'Sun' },
+        { date: '4th', month: 'Feb', day: 'Sun' }
+    ];
+
     return <BatchWrapper>
         <div className='slot'>
             <h2>Yoga for Mind</h2>
@@ -31,58 +44,17 @@ function Batch(props) {
             <div className='booking'>
                 <div className='slot-button'>
                     <FontAwesomeIcon className="icon1" icon={faCaretLeft} />
-                    <ButtonCard
-                        date="29th"
-                        month="Jan"
-                        day="Mon"
-                    />
-                    <ButtonCard
-                        date="30th"
-                        month="Jan"
-                        day="Tue"
-                    />
-                    <ButtonCard
-                        date="31st"
-                        month="Jan"
-                        day="Wed"
-                    />
-                    <ButtonCard
-                        date="1st"
-                        month="Feb"
-                        day="Thur"
-                    />
-                    <ButtonCard
-                        date="2nd"
-                        month="Feb"
-                        day="Fri"
-                    />
-                    <ButtonCard
-                        date="3rd"
-                        month="Feb"
-                        day="Sat"
-                    />
-                    <ButtonCard
-                        date="4th"
-                        month="Feb"
-                        day="Sun"
-                    />
-                    <ButtonCard
-                        date="4th"
-                        month="Feb"
-                        day="Sun"
-                    />
-                    <ButtonCard
-                        date="4th"
-                        month="Feb"
-                        day="Sun"
-                    />
-                    <ButtonCard
-                        date="4th"
-                        month="Feb"
-                        day="Sun"
-                    />
-                    <FontAwesomeIcon className="icon1" icon={faCaretRight} />
-                </div>
+        <div className='slot-button'>
+            <FontAwesomeIcon className="icon1" icon={faCaretLeft} />
+            {dates.map((dateObj) => (
+                <ButtonCard
+                    date={dateObj.date}
+                    month={dateObj.month}
+                    day={dateObj.day}
+                />
+            ))}
+            <FontAwesomeIcon className="icon1" icon={faCaretRight} />
+        </div>
                 <div className='week-button'>
                     <h2>Select Time Slot</h2>
 
@@ -103,6 +75,10 @@ function Batch(props) {
             <button>Buy Package</button>
         </div>
 
+    </BatchWrapper >
+}
+
+export default Batch;
     </BatchWrapper >
 }
 
